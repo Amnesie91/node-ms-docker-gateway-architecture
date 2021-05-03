@@ -1,0 +1,7 @@
+node_modules
+db
+Makefile
+Dockerfile
+docker-compose.prod.yml
+docker-compose.yml
+.dockerignore

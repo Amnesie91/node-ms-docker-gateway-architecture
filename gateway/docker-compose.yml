@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - .:/app
+      - ./src:/app/src
     container_name: gateway_api_container
     expose:
       - "8080"

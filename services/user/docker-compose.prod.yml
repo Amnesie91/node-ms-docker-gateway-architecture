@@ -1,5 +1,4 @@
 version: "3.7"
 services:
-  account:
+  user:
     command: npm run start
-

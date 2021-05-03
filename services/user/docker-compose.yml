@@ -1,16 +1,15 @@
 version: "3.7"
 services:
-  account:
+  user:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - ./:/app
-    container_name: accounts_api_container
+      - ./src:/app/src
+    container_name: user_api_container
     expose:
       - "8080"
     ports:
       - "8080:8080"
     command: npm run dev
-

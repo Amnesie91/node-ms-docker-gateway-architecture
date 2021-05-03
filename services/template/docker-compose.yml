@@ -6,11 +6,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - ./:/app
+      - ./src:/app/src
     container_name: template_api_container
     expose:
       - "8080"
     ports:
       - "8080:8080"
     command: npm run dev
-

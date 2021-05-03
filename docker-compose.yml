@@ -6,22 +6,24 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - ./gateway:/app
+      - ./gateway/src:/app/src
     container_name: gateway_container
     expose:
       - "8080"
     ports:
       - 8080:8080
-    command: npm run dev
+    environment:
+      WAIT_HOSTS: user:8080, template:8080
+    command: sh -c "/wait && npm run start"
 
-  account:
+  user:
     build:
-      context: ./services/accounts
+      context: ./services/user
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - ./services/accounts:/app
-    container_name: accounts_container
+      - ./services/user/src:/app/src
+    container_name: user_container
     expose:
       - "8080"
     command: npm run dev
@@ -32,7 +34,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /app/node_modules
-      - ./services/template:/app
+      - ./services/template/src:/app/src
     container_name: template_container
     expose:
       - "8080"

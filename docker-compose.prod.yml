@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  gateway:
+    command: npm run start
+
+  account:
+    command: npm run start
+
+  template:
+    command: npm run start

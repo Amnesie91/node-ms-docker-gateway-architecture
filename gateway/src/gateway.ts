@@ -1,8 +1,8 @@
-const { ApolloGateway } = require("@apollo/gateway");
-const { ApolloServer } = require("apollo-server");
-const { buildServiceList } = require("./buildServiceList");
+import { ApolloGateway } from "@apollo/gateway";
+import { ApolloServer } from "apollo-server";
+import { buildServiceList } from "./buildServiceList";
 
-const serviceList = buildServiceList(process.env.WAIT_HOSTS);
+const serviceList = buildServiceList(process.env.WAIT_HOSTS || "");
 
 const gateway = new ApolloGateway({
   serviceList,

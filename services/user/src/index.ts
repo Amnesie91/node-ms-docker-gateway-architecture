@@ -1,5 +1,5 @@
-const { ApolloServer, gql } = require("apollo-server");
-const { buildFederatedSchema } = require("@apollo/federation");
+import { ApolloServer, gql } from "apollo-server";
+import { buildFederatedSchema } from "@apollo/federation";
 
 const typeDefs = gql`
   extend type Query {
@@ -30,5 +30,5 @@ const server = new ApolloServer({
 });
 
 server.listen(8080).then(({ url }) => {
-  console.log(`🚀 User Server ready at ${url}`);
+  console.log(`🚀 User Server ready at ${url}!!!`);
 });
